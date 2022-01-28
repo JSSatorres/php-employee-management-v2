@@ -4,8 +4,10 @@
 require_once("config/db.php");
 require_once("config/baseConstants.php");
 require_once("config/constants.php");
+require_once( LIBS ."/database.php");
 require_once( MODELS."/loginModel.php");
- require_once( CONTROLLERS ."/loginController.php");
+require_once( CONTROLLERS ."/loginController.php");
+
 
 
 // require_once(LIBS . "/Controller.php");
@@ -19,45 +21,11 @@ require_once( MODELS."/loginModel.php");
 
 
 
-// Create connection
-
-// clas conection
-function conn()
- {
-    try {
-        $connection = "mysql:host=" . HOST . ";"
-            . "dbname=" . DB . ";"
-            . "charset=" . CHARSET . ";";
-
-        $options = [
-            PDO::ATTR_ERRMODE           =>  PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_EMULATE_PREPARES  => FALSE,
-        ];
-
-        $pdo = new PDO($connection, USER, PASSWORD, $options);
-        print_r($pdo);
-        return $pdo;
-    } catch (PDOException $e) {
-        require_once(VIEWS . "/error/error.php");
-    }
-
-    
-}
 
 
 // function get()
 // {
-    $query = conn()->prepare('SELECT * FROM users ');
-
-    try {
-        $query->execute();
-        $usuarios = $query->fetchAll();
-        // return $usuarios;
-
-
-    } catch (PDOException $e) {
-        return [];
-    }
+   
     
 // }
 

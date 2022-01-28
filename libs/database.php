@@ -1,7 +1,10 @@
 <?php
+
 // Create connection
+
+// clas conection
 function conn()
-{
+ {
     try {
         $connection = "mysql:host=" . HOST . ";"
             . "dbname=" . DB . ";"
@@ -13,7 +16,7 @@ function conn()
         ];
 
         $pdo = new PDO($connection, USER, PASSWORD, $options);
-
+        print_r($pdo);
         return $pdo;
     } catch (PDOException $e) {
         require_once(VIEWS . "/error/error.php");
