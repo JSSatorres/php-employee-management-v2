@@ -9,7 +9,72 @@
 </head>
 
 <body>
-    <h1>Vista Employee</h1>
+
+    <?php require 'views/header.php'; ?>
+
+    <form class="w-50 mx-auto" method="POST" action="<?= BASE_URL ?>/controllers/employee.php
+      <div class=" form-row">
+        <div class="form-group col-md-6">
+            <label for="inputName">Name</label>
+            <input type="text" class="form-control" name="name" id="inputName" value=<?= isset($_GET["id"]) ? $employee["name"] : "" ?>>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputLastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="inputLastName" value=<?= isset($_GET["id"]) ? $employee["lastName"] : "" ?>>
+        </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail">Email Address</label>
+                <input type="email" class="form-control" name="email" id="inputEmail" aria-describedby="emailHelpInline" value=<?= isset($_GET["id"]) ? $employee["email"] : "" ?>>
+                <small id="emailHelpInline" class="text-muted">
+                    We'll always share your email with anyone else.
+                </small>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputGender">Gender</label>
+                <select id="inputGender" name="gender" class="form-control">
+                    <option value="man" <?= isset($_GET["id"]) ? ($employee["gender"] == "man" ? "selected" : "") : "" ?>>Man</option>
+                    <option value="woman" <?= isset($_GET["id"]) ? ($employee["gender"] == "woman" ? "selected" : "") : "" ?>>Woman</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" name="city" id="inputCity" value=<?= isset($_GET["id"]) ? $employee["city"] : "" ?>>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputStreetAddress">Street Address</label>
+                <input type="text" class="form-control" name="streetAddress" id="inputStreetAddress" value=<?= isset($_GET["id"]) ? $employee["streetAddress"] : "" ?>>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputState">State</label>
+                <input type="text" class="form-control" name="state" id="inputState" value=<?= isset($_GET["id"]) ? $employee["state"] : "" ?>>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputAge">Age</label>
+                <input type="number" class="form-control" name="age" id="inputAge" value=<?= isset($_GET["id"]) ? $employee["age"] : "" ?>>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputPostalCode">Postal Code</label>
+                <input type="number" class="form-control" name="postalCode" id="inputPostalCode" value=<?= isset($_GET["id"]) ? $employee["postalCode"] : "" ?>>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPhoneNumber">Phone Number</label>
+                <input type="text" class="form-control" name="phoneNumber" id="inputPhoneNumber" value=<?= isset($_GET["id"]) ? $employee["phoneNumber"] : "" ?>>
+            </div>
+        </div>
+        <input hidden type="text" name="id" value=<?= isset($_GET["id"]) ? $employee["id"] : "" ?>>
+        <button type="submit" class="btn btn-primary"><?= isset($_GET["id"]) ? "Edit" : "Create" ?></button>
+        <a class="btn btn-secondary" href="./dashboard.php" role="button">Return</a>
+    </form>
+
+    <?php require 'views/footer.php'; ?>
 </body>
 
 </html>

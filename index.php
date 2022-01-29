@@ -3,6 +3,7 @@
 
 // require_once("libs/Database.php");
 
+
 require_once("config/db.php");
 require_once("config/baseConstants.php");
 require_once("config/constants.php");
@@ -13,11 +14,11 @@ require_once(LIBS . "/router.php");
 require_once(LIBS . "/database.php");
 require_once("libs/router.php");
 
-$router = new Router();
 
 require_once(LIBS . "/database.php");
 require_once(MODELS . "/loginModel.php");
 require_once(CONTROLLERS . "/loginController.php");
+$router = new Router();
 
 
 
@@ -57,7 +58,7 @@ require_once(CONTROLLERS . "/loginController.php");
 ?>
 <!-- // } -->
 
-<form action="controller/loginController.php" method="POST">
+<!-- <form action="controller/loginController.php" method="POST">
     <h2 class="sr-only">Login Form</h2>
     <div class="illustration"><img class="mb-4" src="./assets/img/assamblericon.png" alt="user icon" width="70" height="70"></i></div>
     <div class="form-floating">
@@ -73,9 +74,9 @@ require_once(CONTROLLERS . "/loginController.php");
 
 
     <button type="submit" class="btn btn-outline-info">Submit</button>
-</form>
+</form> -->
 
-?>
+<!-- ?> -->
 
 
 </div>

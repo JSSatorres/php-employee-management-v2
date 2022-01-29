@@ -14,26 +14,26 @@
 
 
 
-if ($_POST["user"]){
-    $email= $_POST["user"];
-    $password= $_POST["password"];
+// if ($_POST["user"]){
+//     $email= $_POST["user"];
+//     $password= $_POST["password"];
   
 
-    checkLogin($email, $password);
+//     checkLogin($email, $password);
 
-    foreach ($users as $index => $user) {
-            echo "<tr>";
-            echo "<td class='tg-0lax'>" . $user["userId"] . "</td>";
-            echo "<td class='tg-0lax'>" . $user["name"] . "</td>";
-            echo "<td class='tg-0lax'>" . $user["email"] . "</td>";
-            echo "</tr>";
-        }
+//     foreach ($users as $index => $user) {
+//             echo "<tr>";
+//             echo "<td class='tg-0lax'>" . $user["userId"] . "</td>";
+//             echo "<td class='tg-0lax'>" . $user["name"] . "</td>";
+//             echo "<td class='tg-0lax'>" . $user["email"] . "</td>";
+//             echo "</tr>";
+//         }
 
-    echo "estoy en login controller";
-} else{
-    session_start();
-    // logout($_SESSION["login"]);
-}
+//     echo "estoy en login controller";
+// } else{
+//     session_start();
+//     // logout($_SESSION["login"]);
+// }
 
 
 

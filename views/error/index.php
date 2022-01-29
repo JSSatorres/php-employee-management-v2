@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Error page</H1>
+
+<?php require 'views/header.php'; ?>
+<h1>Error page</H1>
+
+<?php require 'views/footer.php'; ?>
 </body>
 </html>

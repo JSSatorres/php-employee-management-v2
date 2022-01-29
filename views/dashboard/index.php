@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+
+    <?php require 'views/header.php'; ?>
+
     <h1>Vista Dashboard</h1>
+    
+    <?php require 'views/footer.php'; ?>
+
 </body>
+
 </html>

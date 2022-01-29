@@ -3,7 +3,7 @@
 
 
 define('HOST', 'localhost');
-define('DB', 'employees');
+define('DB', 'users');
 define('USER', 'root');
 define('PASSWORD', '');
 define('CHARSET', 'utf8mb4');

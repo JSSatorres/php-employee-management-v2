@@ -1,24 +1,46 @@
 <?php
 
-// Create connection
+class Database
+{
+    private $host;
+    private $db;
+    private $user;
+    private $password;
+    private $charset;
+    private $error;
 
-// clas conection
-function conn()
- {
-    try {
-        $connection = "mysql:host=" . HOST . ";"
-            . "dbname=" . DB . ";"
-            . "charset=" . CHARSET . ";";
+    public function __construct()
+    {
+        $this->host = HOST;
+        $this->db = DB;
+        $this->user = USER;
+        $this->password = PASSWORD;
+        $this->charset = CHARSET;
+    }
 
-        $options = [
-            PDO::ATTR_ERRMODE           =>  PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_EMULATE_PREPARES  => FALSE,
-        ];
+    function connect()
+    {
+        try {
+            $connection = "mysql:host=" . $this->host . ";"
+                . "dbname=" . $this->db . ";"
+                . "user=" . $this->user . ";"
+                . "password=" . $this->password . ";"
+                . "charset=" . $this->charset;
 
-        $pdo = new PDO($connection, USER, PASSWORD, $options);
-        print_r($pdo);
-        return $pdo;
-    } catch (PDOException $e) {
-        require_once(VIEWS . "/error/error.php");
+            $options = [
+                PDO::ATTR_ERRMODE           =>  PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_EMULATE_PREPARES  => FALSE,
+            ];
+
+            $pdo = new PDO($connection, $this->user, $this->password, $options);
+
+            return $pdo;
+        } catch (PDOException $e) {
+            //echo 'Connection error: ' . $e->getMessage();
+
+            //This error should be sended to the controller and load a failure VIEW
+            $this->error = "Error connecting to the database";
+            //include VIEWS . '/error/dbError.php';
+        }
     }
 }
