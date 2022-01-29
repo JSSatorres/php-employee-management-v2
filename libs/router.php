@@ -7,24 +7,30 @@ class Router
     function __construct()
     {
 
-        $url = $_GET["url"];
+        $url = isset($_GET["url"]) ? $_GET['url'] : null;
         $url = rtrim($url, '/');
         $url = explode('/', $url);
         echo "<br>";
         print_r($url);
 
+        if(empty($url[0])){
+            $archivoController = 'controllers/main.php';
+            require_once $archivoController;
+            $controller = new Main();
+            return false;
+        }
+
         $archivoController = "controllers/" . $url[0] . '.php';
 
-        if(file_exists($archivoController)){
+        if (file_exists($archivoController)) {
             require_once $archivoController;
             $controller = new $url[0];
 
-            if(isset($url[1])){
+            if (isset($url[1])) {
                 $controller->{$url[1]}();
             }
-        }else{
+        } else {
             $controller = new ErrorM();
         }
-
     }
 }
