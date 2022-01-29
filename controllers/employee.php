@@ -7,8 +7,10 @@ class Employee extends Controller
         parent::__construct();
         $this->view->render('employee/index');
     }
-    function newEmployee(){
+    function newEmployee()
+    {
         echo "New User created";
-        $this->model->insert();
+        // $this->model->insert();
+        print_r($_REQUEST);
     }
 }

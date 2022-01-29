@@ -12,16 +12,16 @@
 
     <?php require 'views/header.php'; ?>
 
-    <form class="w-50 mx-auto" method="POST" action="<?= BASE_URL ?>/controllers/employee.php
-      <div class=" form-row">
-        <div class="form-group col-md-6">
-            <label for="inputName">Name</label>
-            <input type="text" class="form-control" name="name" id="inputName" value=<?= isset($_GET["id"]) ? $employee["name"] : "" ?>>
-        </div>
-        <div class="form-group col-md-6">
-            <label for="inputLastName">Last Name</label>
-            <input type="text" class="form-control" name="lastName" id="inputLastName" value=<?= isset($_GET["id"]) ? $employee["lastName"] : "" ?>>
-        </div>
+    <form class="w-50 mx-auto" method="POST" action="<?= BASE_URL ?>/employee/newEmployee">
+        <div class=" form-row">
+            <div class="form-group col-md-6">
+                <label for="inputName">Name</label>
+                <input type="text" class="form-control" name="name" id="inputName" value=<?= isset($_GET["id"]) ? $employee["name"] : "" ?>>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputLastName">Last Name</label>
+                <input type="text" class="form-control" name="lastName" id="inputLastName" value=<?= isset($_GET["id"]) ? $employee["lastName"] : "" ?>>
+            </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
