@@ -11,6 +11,7 @@
     <?php require 'views/header.php'; ?>
 
     <h1>Vista Dashboard</h1>
+    <?php $this->employees ?>
     
     <?php require 'views/footer.php'; ?>
 

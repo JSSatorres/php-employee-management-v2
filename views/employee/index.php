@@ -72,6 +72,16 @@
         <input hidden type="text" name="id" value=<?= isset($_GET["id"]) ? $employee["id"] : "" ?>>
         <button type="submit" class="btn btn-primary"><?= isset($_GET["id"]) ? "Edit" : "Create" ?></button>
         <a class="btn btn-secondary" href="./dashboard.php" role="button">Return</a>
+
+        <?php
+        if ($this->message) {
+            ?>
+            <div ><?= $this->message ?>
+            </div>
+        <?php
+        }
+        ?>
+
     </form>
 
     <?php require 'views/footer.php'; ?>
