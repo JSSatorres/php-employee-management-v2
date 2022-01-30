@@ -16,24 +16,24 @@
         <div class=" form-row">
             <div class="form-group col-md-6">
                 <label for="inputName">Name</label>
-                <input type="text" class="form-control" name="name" id="inputName" value=<?= isset($_GET["id"]) ? $employee["name"] : "" ?>>
+                <input type="text" class="form-control" name="name" id="inputName" value=<?= isset($_GET["id"]) ? $employee["name"] : "" ?> required>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputLastName">Last Name</label>
-                <input type="text" class="form-control" name="lastName" id="inputLastName" value=<?= isset($_GET["id"]) ? $employee["lastName"] : "" ?>>
+                <input type="text" class="form-control" name="lastName" id="inputLastName" value=<?= isset($_GET["id"]) ? $employee["lastName"] : "" ?>required>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail">Email Address</label>
-                <input type="email" class="form-control" name="email" id="inputEmail" aria-describedby="emailHelpInline" value=<?= isset($_GET["id"]) ? $employee["email"] : "" ?>>
+                <input type="email" class="form-control" name="email" id="inputEmail" aria-describedby="emailHelpInline" value=<?= isset($_GET["id"]) ? $employee["email"] : "" ?>required>
                 <small id="emailHelpInline" class="text-muted">
                     We'll always share your email with anyone else.
                 </small>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputGender">Gender</label>
-                <select id="inputGender" name="gender" class="form-control">
+                <select id="inputGender" name="gender" class="form-control" required>
                     <option value="man" <?= isset($_GET["id"]) ? ($employee["gender"] == "man" ? "selected" : "") : "" ?>>Man</option>
                     <option value="woman" <?= isset($_GET["id"]) ? ($employee["gender"] == "woman" ? "selected" : "") : "" ?>>Woman</option>
                 </select>
@@ -42,31 +42,31 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputCity">City</label>
-                <input type="text" class="form-control" name="city" id="inputCity" value=<?= isset($_GET["id"]) ? $employee["city"] : "" ?>>
+                <input type="text" class="form-control" name="city" id="inputCity" value=<?= isset($_GET["id"]) ? $employee["city"] : "" ?>required>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputStreetAddress">Street Address</label>
-                <input type="text" class="form-control" name="streetAddress" id="inputStreetAddress" value=<?= isset($_GET["id"]) ? $employee["streetAddress"] : "" ?>>
+                <input type="text" class="form-control" name="streetAddress" id="inputStreetAddress" value=<?= isset($_GET["id"]) ? $employee["streetAddress"] : "" ?>required>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputState">State</label>
-                <input type="text" class="form-control" name="state" id="inputState" value=<?= isset($_GET["id"]) ? $employee["state"] : "" ?>>
+                <input type="text" class="form-control" name="state" id="inputState" value=<?= isset($_GET["id"]) ? $employee["state"] : "" ?>required>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputAge">Age</label>
-                <input type="number" class="form-control" name="age" id="inputAge" value=<?= isset($_GET["id"]) ? $employee["age"] : "" ?>>
+                <input type="number" class="form-control" name="age" id="inputAge" value=<?= isset($_GET["id"]) ? $employee["age"] : "" ?>required>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputPostalCode">Postal Code</label>
-                <input type="number" class="form-control" name="postalCode" id="inputPostalCode" value=<?= isset($_GET["id"]) ? $employee["postalCode"] : "" ?>>
+                <input type="number" class="form-control" name="postalCode" id="inputPostalCode" value=<?= isset($_GET["id"]) ? $employee["postalCode"] : "" ?>required>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputPhoneNumber">Phone Number</label>
-                <input type="text" class="form-control" name="phoneNumber" id="inputPhoneNumber" value=<?= isset($_GET["id"]) ? $employee["phoneNumber"] : "" ?>>
+                <input type="text" class="form-control" name="phoneNumber" id="inputPhoneNumber" value=<?= isset($_GET["id"]) ? $employee["phoneNumber"] : "" ?>required>
             </div>
         </div>
         <input hidden type="text" name="id" value=<?= isset($_GET["id"]) ? $employee["id"] : "" ?>>
