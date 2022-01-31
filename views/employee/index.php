@@ -2,6 +2,7 @@
 $url = isset($_GET["url"]) ? $_GET['url'] : null;
 $url = rtrim($url, '/');
 $url = explode('/', $url);
+print_r($url);
 
 ?>
 
@@ -78,7 +79,7 @@ $url = explode('/', $url);
                 <input type="text" class="form-control" name="phoneNumber" id="inputPhoneNumber" value='<?= isset($url[2]) ? $this->employee->phoneNumber : "" ?>' required>
             </div>
         </div>
-        <input hidden type="text" name="id" value=<?= isset($_GET["id"]) ? $employee["id"] : "" ?>>
+       
 
         <?php
         if ($this->message) {

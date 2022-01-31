@@ -37,6 +37,7 @@ class employeeModel extends Model
             $query->execute(['name' => $dates["name"], 'lastName' => $dates["lastName"], 'email' => $dates["email"], 'gender' => $dates["gender"], 'city' => $dates["city"], 'streetAddress' => $dates["streetAddress"], 'state' => $dates["state"], 'age' => $dates["age"], 'postalCode' => $dates["postalCode"], 'phoneNumber' => $dates["phoneNumber"], 'id' => $dates["id"]]);
             return true;
         } catch (PDOException $e) {
+            return false;
         }
     }
 
