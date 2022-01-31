@@ -27,7 +27,8 @@ window.addEventListener("DOMContentLoaded", async () => {
       rowDoubleClick: function (args) {
         const id = args["item"].id;
         console.log(id)
-        window.location.assign(`dashboard/showEmployee/${id}`);
+        // window.location.assign(`employee`);
+        window.location.assign(`employee/showEmployee/${id}`);
       },
   
       fields: [

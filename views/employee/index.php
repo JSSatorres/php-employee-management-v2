@@ -1,3 +1,10 @@
+<?php
+        $url = isset($_GET["url"]) ? $_GET['url'] : null;
+        $url = rtrim($url, '/');
+        $url = explode('/', $url);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +23,7 @@
         <div class=" form-row">
             <div class="form-group col-md-6">
                 <label for="inputName">Name</label>
-                <input type="text" class="form-control" name="name" id="inputName" value=<?= isset($_GET["id"]) ? $employee["name"] : "" ?> required>
+                <input type="text" class="form-control" name="name"  id="inputName" value='<?=isset($url[2])? $this->employee->name : "" ?>' required> <?php echo $url[2]; echo $this->employee->name; ?>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputLastName">Last Name</label>
@@ -42,31 +49,31 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputCity">City</label>
-                <input type="text" class="form-control" name="city" id="inputCity" value=<?= isset($_GET["id"]) ? $employee["city"] : "" ?>required>
+                <input type="text" class="form-control" name="city" id="inputCity" value=<?=isset($url[2]) ?  $this->employee->name : "" ?>required>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputStreetAddress">Street Address</label>
-                <input type="text" class="form-control" name="streetAddress" id="inputStreetAddress" value=<?= isset($_GET["id"]) ? $employee["streetAddress"] : "" ?>required>
+                <input type="text" class="form-control" name="streetAddress" id="inputStreetAddress" value=<?=isset($url[2]) ?  $this->employee->name : "" ?>required>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputState">State</label>
-                <input type="text" class="form-control" name="state" id="inputState" value=<?= isset($_GET["id"]) ? $employee["state"] : "" ?>required>
+                <input type="text" class="form-control" name="state" id="inputState" value=<?=isset($url[2]) ?  $this->employee->name : "" ?>required>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputAge">Age</label>
-                <input type="number" class="form-control" name="age" id="inputAge" value=<?= isset($_GET["id"]) ? $employee["age"] : "" ?>required>
+                <input type="number" class="form-control" name="age" id="inputAge" value=<?=isset($url[2]) ?  $this->employee->name : "" ?>required>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputPostalCode">Postal Code</label>
-                <input type="number" class="form-control" name="postalCode" id="inputPostalCode" value=<?= isset($_GET["id"]) ? $employee["postalCode"] : "" ?>required>
+                <input type="number" class="form-control" name="postalCode" id="inputPostalCode" value=<?=isset($url[2]) ?  $this->employee->name : "" ?>required>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputPhoneNumber">Phone Number</label>
-                <input type="text" class="form-control" name="phoneNumber" id="inputPhoneNumber" value=<?= isset($_GET["id"]) ? $employee["phoneNumber"] : "" ?>required>
+                <input type="text" class="form-control" name="phoneNumber" id="inputPhoneNumber" value=<?=isset($url[2]) ?  $this->employee->name : "" ?>required>
             </div>
         </div>
         <input hidden type="text" name="id" value=<?= isset($_GET["id"]) ? $employee["id"] : "" ?>>
