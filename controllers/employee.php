@@ -63,8 +63,10 @@ class Employee extends Controller
     function updateEmployee()
     {
         print_r($_REQUEST);
+        // $_REQUEST["id"]=1;
         if ($this->model->update($_REQUEST)) {
-            echo "si";
+
+            $this->view->render("employee/index");
         } else {
             echo "no";
         }
