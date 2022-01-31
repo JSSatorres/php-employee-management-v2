@@ -35,6 +35,8 @@ class Router
             }else {
                 $controller->render();
             }
+
+            
         } else {
             $controller = new ErrorM();
         }

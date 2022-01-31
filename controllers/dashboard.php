@@ -12,4 +12,20 @@ class Dashboard extends Controller
         $this->view->employees = $employee;
         $this->view->render('dashboard/index');
     }
+
+    function showEmployee($id){
+        echo"sadasda";
+        echo $id;
+        
+
+    }
+
+    function updateEmployee(){
+
+    }
+
+    function deleteEmployee(){
+
+    }
+
 }

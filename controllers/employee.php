@@ -41,5 +41,7 @@ class Employee extends Controller
         echo json_encode ($getemployees);
 
     }
+
+    
 }
 
