@@ -40,26 +40,30 @@ class Employee extends Controller
         $getemployees = $this->model->get();
         echo json_encode ($getemployees);
 
-    function getEmployee(){
-        
     }
 
-    }
     function showEmployee(){
         $url = isset($_GET["url"]) ? $_GET['url'] : null;
         $url = rtrim($url, '/');
         $url = explode('/', $url);
         
-        echo $url[2];
-        print_r($_REQUEST);
-        if(isset($url[2]));
-        $this->view->employee = $this->view->getEmployee($url[2]);
+        $id= $url[2];
+        $employeeId = $this->model->getById($id);
+        $this->view->employee =  $employeeId;
         // $this->view->dashboard;
-        $this->render();
+        $this->view->render("employee/index");
     }
 
-    
+    function getEmployee(){
+        
+    }
 
+    function update(){
 
+    }
+
+    function deleteEmployee(){
+
+    }
 }
 

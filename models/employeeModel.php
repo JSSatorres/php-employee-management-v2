@@ -26,4 +26,28 @@ class employeeModel extends Model{
            
         }
     }
+
+     function getById($id){
+        $item= new Employee;
+        $query=$this->db->connect()->prepare("SELECT* FROM  employees WHERE id = :id");
+        try {
+            $query->execute(['id'=>$id]);
+
+            while($row= $query->fetch()){
+                $item->name =$row["name"];
+                $item->lastName =$row["lastName"];
+                $item->email =$row["email"];
+                $item->gender =$row["gender"];
+                $item->city =$row["city"];
+                $item->streetAddress =$row["streetAddress"];
+                $item->state =$row["state"];
+                $item->age =$row["age"];
+                $item->postalCode =$row["postalCode"];
+                $item->phoneNumber =$row["phoneNumber"];
+            }
+            return $item;
+        } catch (PDOException $e) {
+           return null;
+        }
+    }
 }

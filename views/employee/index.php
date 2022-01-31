@@ -23,17 +23,17 @@
         <div class=" form-row">
             <div class="form-group col-md-6">
                 <label for="inputName">Name</label>
-                <input type="text" class="form-control" name="name"  id="inputName" value='<?=isset($url[2])? $this->employee->name : "" ?>' required> <?php echo $url[2]; echo $this->employee->name; ?>
+                <input type="text" class="form-control" name="name"  id="inputName" value='<?=isset($url[2])? $this->employee->name : "" ?>' required>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputLastName">Last Name</label>
-                <input type="text" class="form-control" name="lastName" id="inputLastName" value=<?= isset($_GET["id"]) ? $employee["lastName"] : "" ?>required>
+                <input type="text" class="form-control" name="lastName" id="inputLastName" value='<?=isset($url[2])? $this->employee->lastName : "" ?>'required>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail">Email Address</label>
-                <input type="email" class="form-control" name="email" id="inputEmail" aria-describedby="emailHelpInline" value=<?= isset($_GET["id"]) ? $employee["email"] : "" ?>required>
+                <input type="email" class="form-control" name="email" id="inputEmail" aria-describedby="emailHelpInline" value='<?=isset($url[2])? $this->employee->email : "" ?>'required>
                 <small id="emailHelpInline" class="text-muted">
                     We'll always share your email with anyone else.
                 </small>
@@ -49,31 +49,31 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputCity">City</label>
-                <input type="text" class="form-control" name="city" id="inputCity" value=<?=isset($url[2]) ?  $this->employee->name : "" ?>required>
+                <input type="text" class="form-control" name="city" id="inputCity" value='<?=isset($url[2])? $this->employee->city : "" ?>'required>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputStreetAddress">Street Address</label>
-                <input type="text" class="form-control" name="streetAddress" id="inputStreetAddress" value=<?=isset($url[2]) ?  $this->employee->name : "" ?>required>
+                <input type="text" class="form-control" name="streetAddress" id="inputStreetAddress" value='<?=isset($url[2])? $this->employee->streetAddress : "" ?>'required>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputState">State</label>
-                <input type="text" class="form-control" name="state" id="inputState" value=<?=isset($url[2]) ?  $this->employee->name : "" ?>required>
+                <input type="text" class="form-control" name="state" id="inputState" value='<?=isset($url[2])? $this->employee->state : "" ?>' required>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputAge">Age</label>
-                <input type="number" class="form-control" name="age" id="inputAge" value=<?=isset($url[2]) ?  $this->employee->name : "" ?>required>
+                <input type="number" class="form-control" name="age" id="inputAge" value='<?=isset($url[2])? $this->employee->age : "" ?>' required>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputPostalCode">Postal Code</label>
-                <input type="number" class="form-control" name="postalCode" id="inputPostalCode" value=<?=isset($url[2]) ?  $this->employee->name : "" ?>required>
+                <input type="number" class="form-control" name="postalCode" id="inputPostalCode" value='<?=isset($url[2])? $this->employee->postalCode : "" ?>' required>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputPhoneNumber">Phone Number</label>
-                <input type="text" class="form-control" name="phoneNumber" id="inputPhoneNumber" value=<?=isset($url[2]) ?  $this->employee->name : "" ?>required>
+                <input type="text" class="form-control" name="phoneNumber" id="inputPhoneNumber" value='<?=isset($url[2])? $this->employee->phoneNumber: "" ?>' required>
             </div>
         </div>
         <input hidden type="text" name="id" value=<?= isset($_GET["id"]) ? $employee["id"] : "" ?>>
