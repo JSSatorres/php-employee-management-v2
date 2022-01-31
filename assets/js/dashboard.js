@@ -4,7 +4,8 @@ window.addEventListener("DOMContentLoaded", async () => {
 });
 
 async function getEmployees() {
-  const response = await fetch("./library/employeeController.php?getEmployees");
+  const response = await fetch("employee/get");
+  
   const data = await response.json();
   return data;
 }

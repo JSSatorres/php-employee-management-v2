@@ -10,8 +10,7 @@ class Router
         $url = isset($_GET["url"]) ? $_GET['url'] : null;
         $url = rtrim($url, '/');
         $url = explode('/', $url);
-        echo "<br>";
-        print_r($url);
+
 
         if (empty($url[0])) {
             $archivoController = 'controllers/main.php';

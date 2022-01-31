@@ -17,4 +17,13 @@ class employeeModel extends Model{
             return false;
         }
     }
+
+    function get(){
+        try {$query=$this->db->connect()->prepare("SELECT* FROM  employees");
+            $query->execute();
+            return $query->fetchAll( PDO::FETCH_CLASS,"employee");
+        } catch (PDOException $e) {
+           
+        }
+    }
 }

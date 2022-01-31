@@ -35,5 +35,11 @@ class Employee extends Controller
         $this->view->message= $message;
         $this->render();
     }
+
+    function get(){
+        $getemployees = $this->model->get();
+        echo json_encode ($getemployees);
+
+    }
 }
 
