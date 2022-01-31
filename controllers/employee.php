@@ -58,7 +58,7 @@ class Employee extends Controller
         
     }
 
-    function update(){
+    function updateEmployee(){
 
     }
 

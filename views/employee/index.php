@@ -19,7 +19,7 @@
 
     <?php require 'views/header.php'; ?>
 
-    <form class="w-50 mx-auto" method="POST" action="<?= BASE_URL ?>/employee/newEmployee">
+    <form class="w-50 mx-auto" method="POST" action="  <?= BASE_URL ?>/employee/newEmployee">
         <div class=" form-row">
             <div class="form-group col-md-6">
                 <label for="inputName">Name</label>
@@ -77,7 +77,17 @@
             </div>
         </div>
         <input hidden type="text" name="id" value=<?= isset($_GET["id"]) ? $employee["id"] : "" ?>>
-        <button type="submit" class="btn btn-primary"><?= isset($_GET["id"]) ? "Edit" : "Create" ?></button>
+
+         <?php
+        if ($this->message) {
+            ?>
+            <div ><?= $this->message ?>
+            </div>
+        <?php
+        }
+        ?>
+        
+        <button type="submit" class="btn btn-primary"><?= isset($url[2]) ? "Edit" : "Create" ?></button>
         <a class="btn btn-secondary" href="./dashboard.php" role="button">Return</a>
 
         <?php
