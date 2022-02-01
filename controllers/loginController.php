@@ -1,61 +1,34 @@
 <?php
-// require_once("./loginManager.php");
 
-// if(isset($_GET["login"])) {
-//         logincheck();
-//     }
-// if(isset($_GET["logout"])) {
-//         destroySession();
-//         header('Location: ../../index.php?logout');
-//     }
+class LoginController extends Controller
+{
 
+    function __construct()
+    {
+        parent::__construct();
+        $this->loadModel("login");
+    }
 
+    function index()
+    {
+        $this->view->render("login/index");
+    }
 
+    public function logoutUser()
+    {
+        $this->model->logout();
+        header('Location: ' . BASE_URL . 'login/index');
+    }
 
+    public function loginUser()
+    {
+        $result = $this->model->login($_POST['email'], $_POST['password']);
 
-
-// if ($_POST["user"]){
-//     $email= $_POST["user"];
-//     $password= $_POST["password"];
-  
-
-//     checkLogin($email, $password);
-
-//     foreach ($users as $index => $user) {
-//             echo "<tr>";
-//             echo "<td class='tg-0lax'>" . $user["userId"] . "</td>";
-//             echo "<td class='tg-0lax'>" . $user["name"] . "</td>";
-//             echo "<td class='tg-0lax'>" . $user["email"] . "</td>";
-//             echo "</tr>";
-//         }
-
-//     echo "estoy en login controller";
-// } else{
-//     session_start();
-//     // logout($_SESSION["login"]);
-// }
-
-
-
-// switch (true) {
-//     case (isset($_GET["WEmailPass"])):
-//         echo "<div class='alert alert-danger d-flex align-items-center' role='alert'>";
-//         echo "Wrong email and password";
-//         echo "</div>";
-//         break;
-
-//     case (isset($_GET["WName"])):
-//         echo "<div class='alert alert-danger d-flex align-items-center' role='alert'>";
-//         echo "Wrong name";
-//         echo "</div>";
-//         break;
-
-//     case (isset($_GET["WPass"])):
-//         echo "<div class='alert alert-danger d-flex align-items-center' role='alert'>";
-//         echo "Wrong Password";
-//         echo "</div>";
-//         break;
-
-//     default:
-//         break;
-// }
+        if (!$result) {
+            header('Location: ' . BASE_URL . 'login/index');
+            exit();
+        }
+        header('Location: ' . BASE_URL . 'employee/dashboard');
+        exit();
+    }
+}
